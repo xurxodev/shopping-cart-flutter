@@ -6,7 +6,7 @@ class GetProductsUseCase {
 
   GetProductsUseCase(this._productRepository);
 
-  Future<List<Product>> execute(String filter) {
-    return this._productRepository.get(filter);
+  Future<List<Product>> execute() {
+    return this._productRepository.get();
   }
 }
