@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:shopping_cart_flutter/src/domain/products/product.dart';
 import 'package:shopping_cart_flutter/src/domain/products/product_repository.dart';
 
-final products = '''[
+const products = '''[
   {
     "id": "1",
     "image":
@@ -136,7 +136,7 @@ class ProductInMemoryRepository implements ProductRepository {
   @override
   Future<List<Product>> get() {
     return Future.delayed(
-        Duration(milliseconds: 100), () => parse(jsonDecode(products)));
+        const Duration(milliseconds: 100), () => parse(jsonDecode(products)));
   }
 
   List<Product> parse(List<dynamic> json) {
