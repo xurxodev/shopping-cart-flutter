@@ -8,7 +8,7 @@ const products = '''[
     "id": "1",
     "image":
     "https://m.media-amazon.com/images/I/81oKhu2bsgL._AC_UL640_FMwebp_QL65_.jpg",
-    ""title:"" "Element Blazin LS tee Shirt, Hombre",
+    "title": "Element Blazin LS tee Shirt, Hombre",
     "price": 19.95
   },
   {
@@ -19,127 +19,127 @@ const products = '''[
     "price": 21.95
   },
   {
-    "id:" "3",
-    "image:"
+    "id": "3",
+    "image":
     "https://m.media-amazon.com/images/I/81ZYZ9yl1hL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" 'Element Skater Backpack Mohave 15" Saison ',
-    "price:" 52.45
+    "title": "Element Skater Backpack Mohave 15 Saison",
+    "price": 52.45
   },
   {
-    "id:" "4",
-    "image:"
+    "id": "4",
+    "image":
     "https://m.media-amazon.com/images/I/61-DwEh1zrL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Indiana Logo N1SSA5ELP9",
-    "price:" 18.90
+    "title": "Element Indiana Logo N1SSA5ELP9",
+    "price": 18.90
   },
   {
-    "id:" "5",
-    "image:"
+    "id": "5",
+    "image":
     "https://m.media-amazon.com/images/I/71MG0EzCU4L._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element L1ssa8 Camiseta, Hombre",
-    "price:" 27.95
+    "title": "Element L1ssa8 Camiseta, Hombre",
+    "price": 27.95
   },
   {
-    "id:" "6",
-    "image:"
+    "id": "6",
+    "image":
     "https://m.media-amazon.com/images/I/81giLCXfxIL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element N2ssa2 Camiseta, Niños",
-    "price:" 13.90
+    "title": "Element N2ssa2 Camiseta, Niños",
+    "price": 13.90
   },
   {
-    "id:" "7",
-    "image:"
+    "id": "7",
+    "image":
     "https://m.media-amazon.com/images/I/81oKhu2bsgL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Blazin LS tee Shirt, Hombre",
-    "price:" 19.95
+    "title": "Element Blazin LS tee Shirt, Hombre",
+    "price": 19.95
   },
   {
-    "id:" "8",
-    "image:"
+    "id": "8",
+    "image":
     "https://m.media-amazon.com/images/I/7119OAEE+gL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Alder Light 2 Tones",
-    "price:" 68.35
+    "title": "Element Alder Light 2 Tones",
+    "price": 68.35
   },
   {
-    "id:" "9",
-    "image:"
+    "id": "9",
+    "image":
     "https://m.media-amazon.com/images/I/71dp5f24TbL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" 'Element Skater Backpack Mohave 15" Season',
-    "price:" 52.84
+    "title": "Element Skater Backpack Mohave 15 Season",
+    "price": 52.84
   },
   {
-    "id:" "10",
-    "image:"
+    "id": "10",
+    "image":
     "https://m.media-amazon.com/images/I/71Kj-jV5v8L._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Vertical SS Camiseta, Niños",
-    "price:" 13.90
+    "title": "Element Vertical SS Camiseta, Niños",
+    "price": 13.90
   },
   {
-    "id:" "11",
-    "image:"
+    "id": "11",
+    "image":
     "https://m.media-amazon.com/images/I/71jlppwpjmL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Alder Heavy Puff TW Chaqueta, Hombre, Verde Oliva, M EU",
-    "price:" 168.75
+    "title": "Element Alder Heavy Puff TW Chaqueta, Hombre, Verde Oliva, M EU",
+    "price": 168.75
   },
   {
-    "id:" "12",
-    "image:"
+    "id": "12",
+    "image":
     "https://m.media-amazon.com/images/I/71BSdq6OzDL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Hombre Meridian Block Sudadera Mid Grey HTR",
-    "price:" 47.50
+    "title": "Element Hombre Meridian Block Sudadera Mid Grey HTR",
+    "price": 47.50
   },
   {
-    "id:" "13",
-    "image:"
+    "id": "13",
+    "image":
     "https://m.media-amazon.com/images/I/81RAeKF-8wL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Sudadera - para Hombre",
-    "price:" 64.94
+    "title": "Element Sudadera - para Hombre",
+    "price": 64.94
   },
   {
-    "id:" "14",
-    "image:"
+    "id": "14",
+    "image":
     "https://m.media-amazon.com/images/I/717tHbEHDnL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Hombre Camiseta t-Shirt Signature",
-    "price:" 29.84
+    "title": "Element Hombre Camiseta t-Shirt Signature",
+    "price": 29.84
   },
   {
-    "id:" "15",
-    "image:"
+    "id": "15",
+    "image":
     "https://m.media-amazon.com/images/I/81rOs3LA0LL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Section' Pre-Built Complete - 7.50\"",
-    "price:" 99.00
+    "title": "Element Section Pre-Built Complete - 7.50",
+    "price": 99.00
   },
   {
-    "id:" "16",
-    "image:"
+    "id": "16",
+    "image":
     "https://m.media-amazon.com/images/I/61-xQZORAKL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Camiseta - para hombre",
-    "price:" 27.06
+    "title": "Element Camiseta - para hombre",
+    "price": 27.06
   },
   {
-    "id:" "17",
-    "image:"
+    "id": "17",
+    "image":
     "https://m.media-amazon.com/images/I/71RUdoglJML._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Alder Light",
-    "price:" 86.52
+    "title": "Element Alder Light",
+    "price": 86.52
   },
   {
-    "id:" "18",
-    "image:"
+    "id": "18",
+    "image":
     "https://m.media-amazon.com/images/I/714tTmj4KvL._AC_UL640_FMwebp_QL65_.jpg",
-    "title:" "Element Chaqueta Alder Puff TW Negro",
-    "price:" 73.50
+    "title": "Element Chaqueta Alder Puff TW Negro",
+    "price": 73.50
   }
 ]''';
 
 class ProductInMemoryRepository implements ProductRepository {
   @override
-  Future<List<Product>> get() {
+  Future<List<Product>> get() async {
     return Future.delayed(
-        const Duration(milliseconds: 100), () => parse(jsonDecode(products)));
+        const Duration(seconds: 2), () => _parse(jsonDecode(products)));
   }
 
-  List<Product> parse(List<dynamic> json) {
+  List<Product> _parse(List<dynamic> json) {
     return json.map((jsonItem) => _parseProducts(jsonItem)).toList();
   }
 

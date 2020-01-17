@@ -10,6 +10,7 @@ class App extends StatelessWidget {
       title: 'Shopping Cart Flutter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        canvasColor: Colors.grey[50],
       ),
       home: HomePage(),
     );
