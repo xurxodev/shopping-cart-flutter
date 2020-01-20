@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_cart_flutter/src/domain/products/product.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/products_presenter.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/products_state.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/widgets/product_item.dart';
