@@ -4,7 +4,7 @@ import 'package:shopping_cart_flutter/src/domain/cart/Cart.dart';
 import 'package:shopping_cart_flutter/src/domain/cart/CartItem.dart';
 import 'package:shopping_cart_flutter/src/domain/cart/cart_repository.dart';
 
-const jsonCart = ''''[
+const jsonCart = '''[
   {
     "id": "1",
     "image":
@@ -23,7 +23,7 @@ const jsonCart = ''''[
   }
   ]''';
 
-abstract class CartInMemoryRepository implements CartRepository {
+class CartInMemoryRepository implements CartRepository {
   Cart cart = Cart.createEmpty();
 
   CartInMemoryRepository() {
@@ -49,6 +49,6 @@ abstract class CartInMemoryRepository implements CartRepository {
         jsonItem['image'],
         jsonItem['title'],
         jsonItem['price'],
-        jsonItem['quantity'])));
+        jsonItem['quantity'])).toList());
   }
 }

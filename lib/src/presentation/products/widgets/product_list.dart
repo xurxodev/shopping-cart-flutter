@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_cart_flutter/dependencies_provider.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/products_presenter.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/products_state.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/widgets/product_item.dart';
@@ -6,7 +7,8 @@ import 'package:shopping_cart_flutter/src/presentation/products/widgets/product_
 class ProductList extends StatelessWidget {
   final ProductsPresenter _productsPresenter;
 
-  const ProductList(this._productsPresenter);
+  ProductList():_productsPresenter = getIt<ProductsPresenter>();
+
 
   @override
   Widget build(BuildContext context) {

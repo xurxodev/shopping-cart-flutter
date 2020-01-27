@@ -1,5 +1,4 @@
 import 'package:shopping_cart_flutter/src/domain/cart/Cart.dart';
-import 'package:shopping_cart_flutter/src/domain/cart/CartItem.dart';
 import 'package:shopping_cart_flutter/src/domain/cart/cart_repository.dart';
 
 class GetCartUseCase {
@@ -7,7 +6,7 @@ class GetCartUseCase {
 
   GetCartUseCase(this._cartRepository);
 
-  Future<Cart> execute(CartItem cartItem, int quantity) async {
+  Future<Cart> execute() async {
     return _cartRepository.get();
   }
 }

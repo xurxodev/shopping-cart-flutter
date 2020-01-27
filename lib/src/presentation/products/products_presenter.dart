@@ -11,10 +11,10 @@ class ProductsPresenter {
   Future<ProductsState> search(String searchTerm) {
     return _getProductsUseCase
         .execute()
-        .then((products) => mapToState(searchTerm, products));
+        .then((products) => _mapToState(searchTerm, products));
   }
 
-  ProductsState mapToState(String searchTerm, List<Product> products) {
+  ProductsState _mapToState(String searchTerm, List<Product> products) {
     final formatCurrency = NumberFormat.simpleCurrency(locale: 'es-ES');
 
     return ProductsState(
