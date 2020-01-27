@@ -6,12 +6,27 @@ import 'package:shopping_cart_flutter/src/presentation/cart/cart_state.dart';
 class CartContentItem extends StatelessWidget {
   final CartItemState _cartItemState;
   final TextEditingController _quantityController = TextEditingController();
+  final void Function(CartItemState cartItemState) _removeItemFromCartCallback;
+  final void Function(CartItemState cartItemState, int quantity)
+      _editQuantityOfCartItemCallback;
 
-  CartContentItem(this._cartItemState);
+  CartContentItem(
+    this._cartItemState,
+    this._editQuantityOfCartItemCallback,
+    this._removeItemFromCartCallback,
+  );
 
   @override
   Widget build(BuildContext context) {
     _quantityController.text = _cartItemState.quantity.toString();
+
+    _quantityController.addListener(() {
+      final int quantity = int.tryParse(_quantityController.text) ?? 0;
+
+      if (quantity != _cartItemState.quantity) {
+        _editQuantityOfCartItemCallback(_cartItemState, quantity);
+      }
+    });
 
     final imageWidget = Image.network(
       _cartItemState.image,
@@ -59,7 +74,7 @@ class CartContentItem extends StatelessWidget {
               Expanded(flex: 3, child: descriptionWidget),
               IconButton(
                 icon: Icon(Icons.clear),
-                onPressed: () {},
+                onPressed: () => _removeItemFromCartCallback(_cartItemState),
               )
             ],
           ),

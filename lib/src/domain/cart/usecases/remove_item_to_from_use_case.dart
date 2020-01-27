@@ -7,10 +7,10 @@ class RemoveItemFromCartUseCase {
 
   RemoveItemFromCartUseCase(this._cartRepository);
 
-  Future<Cart> execute(CartItem cartItem, int quantity) async {
+  Future<Cart> execute(CartItem cartItem) async {
     final cart = await _cartRepository.get();
 
-    final editedCart = cart.editItem(cartItem, quantity);
+    final editedCart = cart.removeItem(cartItem);
 
     await _cartRepository.save(editedCart);
 

@@ -27,7 +27,7 @@ void registerProductDependencies() {
 }
 
 void registerCartDependencies() {
-  getIt.registerFactory(() => CartPresenter(getIt(),getIt(),getIt(),getIt()));
+  getIt.registerFactory(() => CartPresenter(getIt(),getIt(),getIt(),getIt(),getIt()));
 
   getIt.registerLazySingleton(() => GetCartUseCase(getIt()));
   getIt.registerLazySingleton(() => AddProductToCartUseCase(getIt()));

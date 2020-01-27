@@ -6,9 +6,11 @@ import 'package:shopping_cart_flutter/src/presentation/products/widgets/product_
 
 class ProductList extends StatelessWidget {
   final ProductsPresenter _productsPresenter;
+  final void Function(ProductItemState productItemState)
+      _addProductToCartCallback;
 
-  ProductList():_productsPresenter = getIt<ProductsPresenter>();
-
+  ProductList(this._addProductToCartCallback)
+      : _productsPresenter = getIt<ProductsPresenter>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +32,11 @@ class ProductList extends StatelessWidget {
     return GridView.builder(
       itemCount: state.products.length,
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 250.0, childAspectRatio: 0.58  ),
+          maxCrossAxisExtent: 250.0, childAspectRatio: 0.58),
       itemBuilder: (context, index) {
         final ProductItemState product = state.products[index];
 
-        return ProductItem(product);
+        return ProductItem(product, _addProductToCartCallback);
       },
     );
   }

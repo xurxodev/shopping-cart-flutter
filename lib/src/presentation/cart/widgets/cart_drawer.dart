@@ -5,8 +5,12 @@ import 'package:shopping_cart_flutter/src/presentation/cart/widgets/cart_content
 
 class CartDrawer extends StatelessWidget {
   final CartState _cartState;
+  final void Function(CartItemState cartItemState, int quantity)
+      _editQuantityOfCartItemCallback;
+  final void Function(CartItemState cartItemState) _removeItemFromCartCallback;
 
-  const CartDrawer(this._cartState);
+  const CartDrawer(this._cartState, this._editQuantityOfCartItemCallback,
+      this._removeItemFromCartCallback);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +42,9 @@ class CartDrawer extends StatelessWidget {
                   onTap: () {},
                 )),
           ),
-          Expanded(child: CartContent(_cartState))
+          Expanded(
+              child: CartContent(_cartState, _editQuantityOfCartItemCallback,
+                  _removeItemFromCartCallback))
         ],
       ),
     );

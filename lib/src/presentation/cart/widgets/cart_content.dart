@@ -5,8 +5,12 @@ import 'package:shopping_cart_flutter/src/presentation/cart/widgets/cart_content
 
 class CartContent extends StatelessWidget {
   final CartState _cartState;
+  final void Function(CartItemState cartItemState, int quantity)
+      _editQuantityOfCartItemCallback;
+  final void Function(CartItemState cartItemState) _removeItemFromCartCallback;
 
-  const CartContent(this._cartState);
+  const CartContent(this._cartState, this._editQuantityOfCartItemCallback,
+      this._removeItemFromCartCallback);
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +36,19 @@ class CartContent extends StatelessWidget {
           if (index < _cartState.items.length) {
             final CartItemState cartItemState = _cartState.items[index];
 
-            return CartContentItem(cartItemState);
+            return CartContentItem(cartItemState,
+                _editQuantityOfCartItemCallback, _removeItemFromCartCallback);
           } else {
             return totalPrice();
           }
         });
 
-    final emptyCartItems = () => const Text(' Empty Cart :(');
+    final emptyCartItems = () => Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Text(
+          ' Empty Cart :(',
+          style: Theme.of(context).textTheme.title,
+        ));
 
     final content =
         _cartState.items.isNotEmpty ? cartItems() : emptyCartItems();
