@@ -5,6 +5,42 @@ Flutter Shopping Cart examples with different state managements and design patte
 
 ![flutter-shopping-cart](https://user-images.githubusercontent.com/5593590/73360208-b9f1fb00-42a2-11ea-90a0-116cb5c60fc2.png)
 
+## Available Scripts
+
+In the project directory, you can run:
+
+### Analyze
+
+This project include analysis_options.yaml to customize rules of code static analysis.
+
+Analyze the code:
+
+```
+$ flutter analyze
+```
+
+Analyze the code of the project.
+
+### Run
+
+Run the applications:
+
+```
+$ flutter run
+```
+
+Runs the app in the connected device or emulator.
+
+### Testing
+
+Run unit tests:
+
+```
+$ flutter test
+```
+
+Execute all unit test of the project
+
 ## Libraries used in this project
 * [intl](https://pub.dev/packages/intl)
 * [get_it](https://pub.dev/packages/get_it)
