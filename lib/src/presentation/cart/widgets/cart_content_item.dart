@@ -81,36 +81,3 @@ class CartContentItem extends StatelessWidget {
         ));
   }
 }
-
-/*
-          ListTile(
-            leading: Container(height: 200, width: 50, color: Colors.red,),
-/*              leading:  Image.network(
-                _cartItemState.image,
-
-              )*/
-            //title: Text(_cartItemState.title),
-            title: Container(height: 200, width: 50, color: Colors.blue,),
-            /*subtitle: Row(
-              children: <Widget>[
-                Expanded(
-                    child: TextField(
-                        controller: _quantityController,
-                        //decoration: new InputDecoration(labelText: "Enter your number"),
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                      WhitelistingTextInputFormatter.digitsOnly
-                    ])),
-                Expanded(
-                    child: Text(_cartItemState.price,
-                        style: Theme.of(context).textTheme.caption)),
-              ],
-            ),*/
-            /*trailing: IconButton(
-              icon: Icon(Icons.clear),
-              onPressed: () {},
-            ),*/
-            trailing: Container(height: 200, width: 50, color: Colors.green,),
-            //isThreeLine: true,
-          ),
- */

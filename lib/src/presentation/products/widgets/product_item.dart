@@ -14,7 +14,7 @@ class ProductItem extends StatelessWidget {
         child: Column(
       children: <Widget>[
         Expanded(
-            flex: 5, // 60% of space => (6/(6 + 4))
+            flex: 5,
             child: Image.network(
               _productItem.image,
               fit: BoxFit.fitWidth,
