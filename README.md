@@ -3,11 +3,17 @@ Flutter Shopping Cart examples with different state managements and design patte
 
 ## Screenshots
 
+![flutter-shopping-cart](https://user-images.githubusercontent.com/5593590/73360208-b9f1fb00-42a2-11ea-90a0-116cb5c60fc2.png)
+
+## Libraries used in this project
+* [intl](https://pub.dev/packages/intl)
+* [get_it](https://pub.dev/packages/get_it)
+
 ## License
 
 MIT License
 
-Copyright (c) 2019 Jorge Sánchez Fernández
+Copyright (c) 2020 Jorge Sánchez Fernández
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
