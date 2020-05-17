@@ -20,7 +20,7 @@ class CartContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Text(
-                'total Price',
+                'Total Price',
                 style: Theme.of(context).textTheme.title,
               ),
               Text(_cartState.totalPrice,

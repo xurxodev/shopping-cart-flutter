@@ -18,6 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   CartState _cartState;
+  String searchTerm = 'Elements';
 
   @override
   void initState() {
@@ -51,7 +52,26 @@ class _HomePageState extends State<HomePage> {
       appBar: MyAppBar(_cartState.totalItems),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ProductList(_addProductToCart),
+        child: Column(
+          children: <Widget>[
+            Padding(
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  children: <Widget>[
+                    Text('Results for ',
+                        style: Theme.of(context).textTheme.title),
+                    Text(searchTerm,
+                        style: Theme.of(context)
+                            .textTheme
+                            .title
+                            .copyWith(color: Theme.of(context).primaryColor))
+                  ],
+                )),
+            Expanded(
+              child: ProductList(_addProductToCart),
+            )
+          ],
+        ),
       ),
       endDrawer:
           CartDrawer(_cartState, _editQuantityOfCartItem, _removeItemFromCart),

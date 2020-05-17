@@ -9,7 +9,7 @@ import 'package:shopping_cart_flutter/src/domain/cart/usecases/remove_item_to_fr
 import 'package:shopping_cart_flutter/src/domain/products/get_products_use_case.dart';
 import 'package:shopping_cart_flutter/src/domain/products/product_repository.dart';
 import 'package:shopping_cart_flutter/src/presentation/cart/cart_presenter.dart';
-import 'package:shopping_cart_flutter/src/presentation/products/products_presenter.dart';
+import 'package:shopping_cart_flutter/src/presentation/products/products_bloc.dart';
 
 final getIt = GetIt.instance;
 
@@ -19,7 +19,7 @@ void init() {
 }
 
 void registerProductDependencies() {
-  getIt.registerFactory(() => ProductsPresenter(getIt()));
+  getIt.registerFactory(() => ProductsBloc(getIt()));
 
   getIt.registerLazySingleton(() => GetProductsUseCase(getIt()));
 

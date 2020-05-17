@@ -1,34 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_cart_flutter/dependencies_provider.dart';
-import 'package:shopping_cart_flutter/src/presentation/products/products_presenter.dart';
+import 'package:shopping_cart_flutter/src/presentation/products/products_bloc.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/products_state.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/widgets/product_item.dart';
 
 class ProductList extends StatelessWidget {
-  final ProductsPresenter _productsPresenter;
+  final ProductsBloc _bloc;
+
   final void Function(ProductItemState productItemState)
       _addProductToCartCallback;
 
   ProductList(this._addProductToCartCallback)
-      : _productsPresenter = getIt<ProductsPresenter>();
+      : _bloc= getIt<ProductsBloc>(){
+    _bloc.search('Elements');
+  }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<ProductsState>(
-        initialData: null,
-        future: _productsPresenter.search('Element'),
-        builder: (context, snapshot) {
-          if (snapshot.hasData)
-            return renderProductList(context, snapshot.data);
-          else if (snapshot.hasError) {
-            return Text(snapshot.error.toString());
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        });
+    return StreamBuilder<ProductsState>(
+      initialData: _bloc.state,
+      stream: _bloc.observableState,
+      builder: (context, snapshot) {
+        final state = snapshot.data;
+
+        if (state is LoadingProductsState) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (state is ErrorProductsState) {
+          return Center(child:Text(state.message));
+        } else {
+          return _renderProductList(context, state);
+        }
+      },
+    );
   }
 
-  Widget renderProductList(BuildContext context, ProductsState state) {
+  Widget _renderProductList(BuildContext context, LoadedProductsState state) {
     return GridView.builder(
       itemCount: state.products.length,
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(

@@ -37,7 +37,7 @@ class CartPresenter {
     _loadCart();
   }
 
-  Future<void> addProductToCartCart(ProductItemState productItemState) {
+  void addProductToCartCart(ProductItemState productItemState) {
     final Product product =
         _products.firstWhere((product) => product.id == productItemState.id);
 
