@@ -53,6 +53,13 @@ $ flutter test
 
 Execute all unit test of the project
 
+# Resources
+* [Qué es el estado en frameworks declarativos](/estado-en-frameworks-declarativos/).
+* [Introducción al patrón BLoc](/introduccion-al-patron-bloc/)
+* [El Patrón Bloc en Clean Architecture](/el-patron-bloc-en-clean-architecture/)
+* [El Patrón Bloc junto a Clean Architecture en Flutter](el-patron-bloc-junto-a-clean-architecture-en-flutter)
+* [Curso Clean Architecture](/curso-clean-architecture)
+
 ## Libraries used in this project
 * [intl](https://pub.dev/packages/intl)
 * [get_it](https://pub.dev/packages/get_it)
