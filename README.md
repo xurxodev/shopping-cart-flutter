@@ -1,14 +1,21 @@
 ![header](https://user-images.githubusercontent.com/5593590/72217864-33b08780-3534-11ea-8fb9-929596298a5a.png)
-Flutter Shopping Cart examples with different state managements and design patterns
+Flutter Shopping Cart example usign BLoC pattern and Clean Architecture
 
 ## Screenshots
 
 ![flutter-shopping-cart](https://user-images.githubusercontent.com/5593590/73360208-b9f1fb00-42a2-11ea-90a0-116cb5c60fc2.png)
 
-## State managements strategies
+## State management strategy
 
-* Branch [Lifting state up](https://github.com/xurxodev/shopping-cart-flutter/tree/lifting-state-up)
-* Branch [BLoC Pattern](https://github.com/xurxodev/shopping-cart-flutter/tree/bloc-pattern)
+This branch use BloC Pattern as state managemment strategy
+
+![bloc-pattern](https://user-images.githubusercontent.com/5593590/82729031-85dc9300-9cf4-11ea-951b-81b88222799f.png)
+
+## Architecture
+
+This branch use Clean Architecture and BloC pattern is used as a presentation pattern.
+
+![bloc-clean-architecture](https://user-images.githubusercontent.com/5593590/82728951-03ec6a00-9cf4-11ea-8557-011a3dea7804.png)
 
 ## Available Scripts
 
