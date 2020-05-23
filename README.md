@@ -10,6 +10,12 @@ Flutter Shopping Cart examples with different state managements and design patte
 * Branch [Lifting state up](https://github.com/xurxodev/shopping-cart-flutter/tree/lifting-state-up)
 * Branch [BLoC Pattern](https://github.com/xurxodev/shopping-cart-flutter/tree/bloc-pattern)
 
+## Clean Architecture
+
+All strategies uses Clean architecture
+
+![bloc-clean-architecture](https://user-images.githubusercontent.com/5593590/82728951-03ec6a00-9cf4-11ea-8557-011a3dea7804.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
