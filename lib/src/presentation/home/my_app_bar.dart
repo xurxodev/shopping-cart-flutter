@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_cart_flutter/src/presentation/cart/widgets/cart_counter_badge.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final int _cartItemsCounter;
-
-  MyAppBar(this._cartItemsCounter, {Key key})
-      : preferredSize = Size.fromHeight(kToolbarHeight),
-        super(key: key);
+  MyAppBar() : preferredSize = Size.fromHeight(kToolbarHeight);
 
   @override
-  final Size preferredSize; //
+  final Size preferredSize;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +21,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   Widget shoppingCartIcon(BuildContext context) {
-    final badge = _cartItemsCounter != 0 ? counterBadge() : Container();
-
     // Using Stack to show Notification Badge
     return Stack(
       children: <Widget>[
@@ -35,34 +30,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             Scaffold.of(context).openEndDrawer();
           },
         ),
-        badge
+        CartCounterBadge()
       ],
-    );
-  }
-
-  Widget counterBadge() {
-    return Positioned(
-      right: 5,
-      top: 5,
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        constraints: const BoxConstraints(
-          minWidth: 18,
-          minHeight: 18,
-        ),
-        child: Text(
-          '$_cartItemsCounter',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 13,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ),
     );
   }
 }

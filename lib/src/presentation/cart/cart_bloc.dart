@@ -1,4 +1,5 @@
 import 'package:intl/intl.dart';
+import 'package:shopping_cart_flutter/src/common/bloc/bloc.dart';
 import 'package:shopping_cart_flutter/src/domain/cart/Cart.dart';
 import 'package:shopping_cart_flutter/src/domain/cart/CartItem.dart';
 import 'package:shopping_cart_flutter/src/domain/cart/usecases/add_product_to_cart_use_case.dart';
@@ -10,9 +11,7 @@ import 'package:shopping_cart_flutter/src/domain/products/product.dart';
 import 'package:shopping_cart_flutter/src/presentation/cart/cart_state.dart';
 import 'package:shopping_cart_flutter/src/presentation/products/products_state.dart';
 
-typedef OnCartChanged = Function(CartState cartState);
-
-class CartPresenter {
+class CartBloc extends Bloc<CartState> {
   final GetProductsUseCase _getProductsUseCase;
   final GetCartUseCase _getCartUseCase;
   final AddProductToCartUseCase _addProductToCartUseCase;
@@ -22,19 +21,19 @@ class CartPresenter {
   Cart _cart;
   List<Product> _products;
 
-  OnCartChanged _onCartChanged;
-
-  CartPresenter(
+  CartBloc(
       this._getProductsUseCase,
       this._getCartUseCase,
       this._addProductToCartUseCase,
       this._removeItemFromCartUseCase,
-      this._editQuantityOfCartItemUseCase);
+      this._editQuantityOfCartItemUseCase) {
+    _init();
+  }
 
-  Future<void> init(OnCartChanged onCartChanged) async {
-    _onCartChanged = onCartChanged;
-    _products =  await _getProductsUseCase.execute();
+  Future<void> _init() async {
+    _products = await _getProductsUseCase.execute();
     _loadCart();
+    changeState(CartState.loading());
   }
 
   void addProductToCartCart(ProductItemState productItemState) {
@@ -43,7 +42,7 @@ class CartPresenter {
 
     _addProductToCartUseCase.execute(product).then((cart) {
       _cart = cart;
-      _render(cart);
+      changeState(_mapToState(cart));
     });
   }
 
@@ -53,7 +52,7 @@ class CartPresenter {
 
     _removeItemFromCartUseCase.execute(cartItem).then((cart) {
       _cart = cart;
-      _render(cart);
+      changeState(_mapToState(cart));
     });
   }
 
@@ -63,27 +62,23 @@ class CartPresenter {
 
     _editQuantityOfCartItemUseCase.execute(cartItem, quantity).then((cart) {
       _cart = cart;
-      _render(cart);
+      changeState(_mapToState(cart));
     });
   }
 
   void _loadCart() {
     _getCartUseCase.execute().then((cart) {
       _cart = cart;
-      _render(cart);
+      changeState(_mapToState(cart));
+    }).catchError((error) {
+      changeState(CartState.error('A network error has ocurrd'));
     });
-  }
-
-  void _render(Cart cart) {
-    if (_onCartChanged != null) {
-      _onCartChanged(_mapToState(cart));
-    }
   }
 
   CartState _mapToState(Cart cart) {
     final formatCurrency = NumberFormat.simpleCurrency(locale: 'es-ES');
 
-    return CartState(
+    return CartState.loaded(
         formatCurrency.format(cart.totalPrice),
         cart.totalItems,
         cart.items

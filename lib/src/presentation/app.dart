@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_cart_flutter/dependencies_provider.dart';
+import 'package:shopping_cart_flutter/src/common/bloc/bloc_provider.dart';
+import 'package:shopping_cart_flutter/src/presentation/cart/cart_bloc.dart';
 import 'package:shopping_cart_flutter/src/presentation/home/home_page.dart';
 
 class App extends StatelessWidget {
@@ -12,7 +15,8 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         canvasColor: Colors.grey[50],
       ),
-      home: HomePage(),
+      home: BlocProvider( bloc: getIt<CartBloc>(), child: HomePage(),)
+        ,
     );
   }
 }

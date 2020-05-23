@@ -1,30 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shopping_cart_flutter/src/common/bloc/bloc_provider.dart';
+import 'package:shopping_cart_flutter/src/presentation/cart/cart_bloc.dart';
 import 'package:shopping_cart_flutter/src/presentation/cart/cart_state.dart';
 
 class CartContentItem extends StatelessWidget {
   final CartItemState _cartItemState;
   final TextEditingController _quantityController = TextEditingController();
-  final void Function(CartItemState cartItemState) _removeItemFromCartCallback;
-  final void Function(CartItemState cartItemState, int quantity)
-      _editQuantityOfCartItemCallback;
 
-  CartContentItem(
-    this._cartItemState,
-    this._editQuantityOfCartItemCallback,
-    this._removeItemFromCartCallback,
-  );
+  CartContentItem(this._cartItemState);
 
   @override
   Widget build(BuildContext context) {
+    final cartBloc = BlocProvider.of<CartBloc>(context);
+
     _quantityController.text = _cartItemState.quantity.toString();
 
     _quantityController.addListener(() {
       final int quantity = int.tryParse(_quantityController.text) ?? 0;
 
       if (quantity != _cartItemState.quantity) {
-        _editQuantityOfCartItemCallback(_cartItemState, quantity);
+        cartBloc.editQuantityOfCartItem(_cartItemState, quantity);
       }
     });
 
@@ -74,7 +71,7 @@ class CartContentItem extends StatelessWidget {
               Expanded(flex: 3, child: descriptionWidget),
               IconButton(
                 icon: Icon(Icons.clear),
-                onPressed: () => _removeItemFromCartCallback(_cartItemState),
+                onPressed: () => cartBloc.removeCartItemOfCart(_cartItemState),
               )
             ],
           ),

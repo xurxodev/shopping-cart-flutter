@@ -1,17 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping_cart_flutter/src/presentation/cart/cart_state.dart';
 import 'package:shopping_cart_flutter/src/presentation/cart/widgets/cart_content.dart';
 
 class CartDrawer extends StatelessWidget {
-  final CartState _cartState;
-  final void Function(CartItemState cartItemState, int quantity)
-      _editQuantityOfCartItemCallback;
-  final void Function(CartItemState cartItemState) _removeItemFromCartCallback;
-
-  const CartDrawer(this._cartState, this._editQuantityOfCartItemCallback,
-      this._removeItemFromCartCallback);
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -42,9 +33,7 @@ class CartDrawer extends StatelessWidget {
                   onTap: () {},
                 )),
           ),
-          Expanded(
-              child: CartContent(_cartState, _editQuantityOfCartItemCallback,
-                  _removeItemFromCartCallback))
+          const Expanded(child: CartContent())
         ],
       ),
     );
