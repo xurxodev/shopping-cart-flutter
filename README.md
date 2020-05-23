@@ -53,6 +53,12 @@ $ flutter test
 
 Execute all unit test of the project
 
+# Resources
+* [Qué es el estado en frameworks declarativos](/estado-en-frameworks-declarativos/).
+* [Gestión simple de estado en frameworks declarativos](/gestion-simple-de-estado-en-frameworks-declarativos/).
+* [Gestión simple de estado en Flutter](/gestion-simple-de-estado-en-flutter/)
+* [Curso Clean Architecture](/curso-clean-architecture)
+
 ## Libraries used in this project
 * [intl](https://pub.dev/packages/intl)
 * [get_it](https://pub.dev/packages/get_it)
