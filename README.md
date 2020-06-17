@@ -55,7 +55,6 @@ Execute all unit test of the project
 # Resources
 * [Qué es el estado en frameworks declarativos](http://xurxodev.com/estado-en-frameworks-declarativos/).
 * [Gestión simple de estado en frameworks declarativos](http://xurxodev.com/gestion-simple-de-estado-en-frameworks-declarativos/).
-* [Gestión simple de estado en ReactJS](http://xurxodev.com/gestion-simple-de-estado-en-reactjs/)
 * [Gestión simple de estado en Flutter](http://xurxodev.com/gestion-simple-de-estado-en-flutter/)
 * [Introducción al patrón BLoc](http://xurxodev.com/introduccion-al-patron-bloc/)
 * [El Patrón Bloc en Clean Architecture](http://xurxodev.com/el-patron-bloc-en-clean-architecture/)
