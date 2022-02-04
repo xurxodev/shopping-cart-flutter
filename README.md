@@ -1,6 +1,10 @@
 ![header](https://user-images.githubusercontent.com/5593590/72217864-33b08780-3534-11ea-8fb9-929596298a5a.png)
 Flutter Shopping Cart examples with different state managements and design patterns
 
+## Clean Architecture Course
+
+* [Curso Clean Architecture](https://xurxodev.com/curso-clean-architecture)
+
 ## Screenshots
 
 ![flutter-shopping-cart](https://user-images.githubusercontent.com/5593590/73360208-b9f1fb00-42a2-11ea-90a0-116cb5c60fc2.png)
